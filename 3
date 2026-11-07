@@ -1,0 +1,47 @@
+#!/bin/bash
+# dean's profile
+
+## Add for homebrew and vscode["go.toolsGopath"].
+export PATH=$PATH:/opt/homebrew/bin/:/opt/sdks/golang/gopath/bin
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
+[ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
+
+
+# >>> JVM installed by coursier >>>
+export JAVA_HOME="/Users/dean/Library/Caches/Coursier/arc/https/github.com/AdoptOpenJDK/openjdk8-binaries/releases/download/jdk8u292-b10/OpenJDK8U-jdk_x64_mac_hotspot_8u292b10.tar.gz/jdk8u292-b10/Contents/Home"
+# <<< JVM installed by coursier <<<
+
+# >>> coursier install directory >>>
+export PATH="$PATH:/Users/dean/Library/Application Support/Coursier/bin"
+# <<< coursier install directory <<<
+#
+#curl https://bumu.fly.dev/apis/v1/infra/linux/count
+
+# Added by OrbStack: command-line tools and integration
+source ~/.orbstack/shell/init.bash 2>/dev/null || :
+
+export BASH_SILENCE_DEPRECATION_WARNING=1
+export PATH=/opt/src/flutter/bin:$PATH
+export PATH=$HOME/.gem/bin:$PATH
+
+export PNPM_HOME="$HOME/Library/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+
+export PATH="$HOME/.local/bin:$PATH"
+
+######### https://github.com/airdb/.github-private ###############
+# Author by Airdb Team @ 2015 - Now
+AIRDB_INITFILE="$HOME/.config/bash/init.sh"
+[ -f "$AIRDB_INITFILE" ] && source "$AIRDB_INITFILE"
+
+alias work="cd /opt/src/github.com/airdb"
+alias cool="cd /opt/src/cnb.cool/"
+
+
+PROMPT_COMMAND="printf '\e[?2004l'; ${PROMPT_COMMAND}"
+
