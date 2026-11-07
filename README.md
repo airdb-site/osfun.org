@@ -17,3 +17,7 @@ pnpm build
 ## 发布
 
 已准备 GitHub Pages 工作流（每次重跑使用独立产物名称）。创建对应仓库后，在 Settings → Pages 中选择 GitHub Actions，并配置自定义域名 osfun.org。目前未创建远端仓库或修改 DNS。
+
+## 双语页面
+
+中文首页 `/`；英文首页 `/en/`。两页导航提供语言切换，并声明 canonical、hreflang 和 x-default。更新内容时需同步两种语言页面。
